@@ -1,3 +1,13 @@
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+import DescriptionIcon from "@mui/icons-material/Description";
+import HelpIcon from "@mui/icons-material/Help";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import LockClockOutlinedIcon from "@mui/icons-material/LockClockOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
+import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
 import {
   Box,
   Button,
@@ -9,21 +19,11 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { RiMenuFill, RiNotification2Line } from "react-icons/ri";
-import logo from "../images/loading-lines-6747317-5601928.webp";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useState } from "react";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import user from "../images/user.png";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
-import LockClockOutlinedIcon from "@mui/icons-material/LockClockOutlined";
-import HelpIcon from "@mui/icons-material/Help";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import DescriptionIcon from "@mui/icons-material/Description";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
-import LogoutIcon from "@mui/icons-material/Logout";
+import { RiNotification2Line } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../images/loading-lines-6747317-5601928.webp";
+import user from "../images/user.png";
 const Header = () => {
   const theme: any = useTheme();
   const [isOpen, setIsOpen] = useState(false);

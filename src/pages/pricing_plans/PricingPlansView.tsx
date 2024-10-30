@@ -7,7 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 type Props = {};
 
 const PricingPlansView = (props: Props) => {
-  const theme = useTheme();
+  const theme: any = useTheme();
   return (
     <Box p={"30px 10%"}>
       <Box
@@ -814,7 +814,7 @@ const data = [
 ];
 
 function AccordionTransition() {
-  const [expandedIndices, setExpandedIndices] = React.useState([]);
+  const [expandedIndices, setExpandedIndices] = React.useState<number[]>([]);
 
   const handleExpansion = (index: any) => {
     setExpandedIndices((prevIndices: any) =>
@@ -826,36 +826,39 @@ function AccordionTransition() {
 
   return (
     <div>
-      {data.map((item, index) => (
-        <Accordion
-          key={index}
-          expanded={expandedIndices.includes(index)}
-          onChange={() => handleExpansion(index)}
-          slots={{ transition: Fade as AccordionSlots["transition"] }}
-          slotProps={{ transition: { timeout: 400 } }}
-          sx={{
-            "& .MuiAccordion-region": expandedIndices.includes(index)
-              ? { height: "auto" }
-              : { height: 0 },
-            "& .MuiAccordionDetails-root": expandedIndices.includes(index)
-              ? { display: "block" }
-              : { display: "none" },
-          }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={`panel${index}-content`}
-            id={`panel${index}-header`}>
-            <Typography fontWeight={"500"} fontSize={"1.2rem"}>
-              {item.title}
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography fontSize={"1rem"} color='grey_500.main'>
-              {item.description}
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-      ))}
+      {data.map((item, index): any => {
+        index = Number(index);
+        return (
+          <Accordion
+            key={index}
+            expanded={expandedIndices.includes(index)}
+            onChange={() => handleExpansion(index)}
+            slots={{ transition: Fade as AccordionSlots["transition"] }}
+            slotProps={{ transition: { timeout: 400 } }}
+            sx={{
+              "& .MuiAccordion-region": expandedIndices.includes(index)
+                ? { height: "auto" }
+                : { height: 0 },
+              "& .MuiAccordionDetails-root": expandedIndices.includes(index)
+                ? { display: "block" }
+                : { display: "none" },
+            }}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`panel${index}-content`}
+              id={`panel${index}-header`}>
+              <Typography fontWeight={"500"} fontSize={"1.2rem"}>
+                {item.title}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography fontSize={"1rem"} color='grey_500.main'>
+                {item.description}
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        );
+      })}
     </div>
   );
 }

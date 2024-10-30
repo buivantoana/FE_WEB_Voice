@@ -1,32 +1,27 @@
+import AddIcon from "@mui/icons-material/Add";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+import DescriptionIcon from "@mui/icons-material/Description";
+import HelpIcon from "@mui/icons-material/Help";
+import LockClockOutlinedIcon from "@mui/icons-material/LockClockOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
+import RemoveIcon from "@mui/icons-material/Remove";
+import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
 import {
   Box,
   Button,
-  IconButton,
   Slider,
   styled,
-  TextField,
   Tooltip,
   Typography,
   useTheme,
 } from "@mui/material";
-import React from "react";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import user from "../../images/user.png";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
-import LockClockOutlinedIcon from "@mui/icons-material/LockClockOutlined";
-import HelpIcon from "@mui/icons-material/Help";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import DescriptionIcon from "@mui/icons-material/Description";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
-import LogoutIcon from "@mui/icons-material/Logout";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
 import { RiPaypalFill } from "react-icons/ri";
-type Props = {};
+import user from "../../images/user.png";
 
-const BuyCreditView = (props: Props) => {
+const BuyCreditView = () => {
   const theme: any = useTheme();
   return (
     <Box padding={"2% 10%"}>

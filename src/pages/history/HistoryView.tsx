@@ -1,32 +1,28 @@
-import { Box, Button, TextField, Typography, useTheme } from "@mui/material";
-import React, { useState } from "react";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Timeline from "@mui/lab/Timeline";
-import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import mp3 from "../../images/hello_toan.mp3";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import { Box, Button, TextField, Typography, useTheme } from "@mui/material";
+import React, { useState } from "react";
 import {
   RiArrowDownLine,
   RiCloseLine,
   RiDownload2Line,
   RiLoopLeftFill,
-  RiPaypalFill,
   RiPlayFill,
   RiVoiceprintFill,
   RiZhihuFill,
 } from "react-icons/ri";
-type Props = {};
+import mp3 from "../../images/hello_toan.mp3";
 
-const HistoryView = (props: Props) => {
-  const theme = useTheme();
+const HistoryView = () => {
+  const theme: any = useTheme();
   const [accordion, setAccordion] = useState(false);
   const [open, setOpen] = React.useState(false);
 
@@ -336,9 +332,9 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 
-import Toolbar from "@mui/material/Toolbar";
-import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
+import Paper from "@mui/material/Paper";
+import Toolbar from "@mui/material/Toolbar";
 
 interface Data {
   id: number;
@@ -347,6 +343,7 @@ interface Data {
   fat: number;
   name: string;
   protein: number;
+  protein1: number;
 }
 
 function createData(
@@ -355,7 +352,8 @@ function createData(
   calories: number,
   fat: number,
   carbs: number,
-  protein: number
+  protein: number,
+  protein1: number
 ): Data {
   return {
     id,
@@ -364,10 +362,11 @@ function createData(
     fat,
     carbs,
     protein,
+    protein1,
   };
 }
 
-const rows = [createData(1, "Cupcake", 305, 3.7, 67, 4.3, 4.5)];
+const rows = [createData(1, "Cupcake", 305, 3.7, 67, 4.3, 7)];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -537,7 +536,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
   );
 }
 function EnhancedTable(props: any) {
-  const theme = useTheme();
+  const theme: any = useTheme();
   const [order, setOrder] = React.useState<Order>("asc");
   const [orderBy, setOrderBy] = React.useState<keyof Data>("calories");
   const [selected, setSelected] = React.useState<readonly number[]>([]);
@@ -744,15 +743,13 @@ function EnhancedTable(props: any) {
   );
 }
 
+import Author from "@/components/Author";
+import InputSlider from "@/components/InputSlide";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
-import InputSlider from "@/components/InputSlide";
-import Author from "@/components/Author";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -764,7 +761,7 @@ const Transition = React.forwardRef(function Transition(
 });
 
 function AlertDialogSlide(props: any) {
-  const theme = useTheme();
+  const theme: any = useTheme();
   return (
     <React.Fragment>
       <Dialog

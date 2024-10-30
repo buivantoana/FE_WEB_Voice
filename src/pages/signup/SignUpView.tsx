@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 type Props = {};
 
 const SignUpView = (props: Props) => {
-  const theme = useTheme();
+  const theme: any = useTheme();
   return (
     <Box
       sx={{
