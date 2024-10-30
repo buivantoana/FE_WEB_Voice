@@ -5,6 +5,7 @@ import background_gif from "../../images/source.gif";
 import logo from "../../images/loading-lines-6747317-5601928.webp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CustomTextField from "@/components/CustomTextField";
+import { Link } from "react-router-dom";
 type Props = {};
 
 const SignUpView = (props: Props) => {
@@ -41,20 +42,24 @@ const SignUpView = (props: Props) => {
           height: "100vh",
           backdropFilter: "blur(40px)",
         }}></Box>
+      <Link to={"/"}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "40px",
+            left: "40px",
+            display: "flex",
+            gap: "15px",
+            alignItems: "center",
+            zIndex: 5,
+          }}>
+          <RiArrowLeftLine />
 
-      <Box
-        sx={{
-          position: "absolute",
-          top: "40px",
-          left: "40px",
-          display: "flex",
-          gap: "15px",
-          alignItems: "center",
-          zIndex: 5,
-        }}>
-        <RiArrowLeftLine />
-        <Typography fontWeight={"500"}>Quay về trang chủ</Typography>
-      </Box>
+          <Typography color='black' fontWeight={"500"}>
+            Quay về trang chủ
+          </Typography>
+        </Box>
+      </Link>
       <Box
         sx={{
           position: "absolute",
@@ -103,9 +108,11 @@ const SignUpView = (props: Props) => {
                 sx={{ display: "flex", gap: "5px" }}
                 color='grey_500.main'>
                 Đã có tài khoản ?{" "}
-                <Typography color='active.main' fontWeight={"500"}>
-                  Đăng nhập
-                </Typography>
+                <Link to={"/signin"}>
+                  <Typography color='active.main' fontWeight={"500"}>
+                    Đăng nhập
+                  </Typography>
+                </Link>
               </Typography>
             </Box>
             <Box>
@@ -129,13 +136,15 @@ const SignUpView = (props: Props) => {
                 color='rgb(100 116 139)'
                 textAlign={"center"}>
                 Bằng cách đăng ký, bạn đồng ý với{" "}
-                <span
-                  style={{
-                    color: theme.palette.active.main,
-                    fontWeight: "bold",
-                  }}>
-                  Điều khoản Dịch vụ
-                </span>{" "}
+                <Link to={"/terms"}>
+                  <span
+                    style={{
+                      color: theme.palette.active.main,
+                      fontWeight: "bold",
+                    }}>
+                    Điều khoản Dịch vụ
+                  </span>{" "}
+                </Link>
                 của chúng tôi.
               </Typography>
             </Box>

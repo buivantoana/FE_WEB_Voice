@@ -23,6 +23,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import DescriptionIcon from "@mui/icons-material/Description";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   const theme: any = useTheme();
   const [isOpen, setIsOpen] = useState(false);
@@ -64,58 +65,68 @@ const Header = () => {
           borderRadius={"30px"}
           sx={{ cursor: "pointer" }}>
           <Stack direction={"row"} gap={"20px"}>
-            <Box
-              padding={"9px 0"}
-              sx={{ borderBottom: `2px solid ${theme.palette.active.main}` }}>
-              <Typography
-                fontSize={".9rem"}
-                fontWeight={"500"}
-                color={"active.main"}>
-                Vocalize
-              </Typography>
-            </Box>
-            <Box padding={"9px 0"}>
-              <Typography
-                fontSize={".9rem"}
-                fontWeight={"500"}
-                color={"grey_500.main"}>
-                History
-              </Typography>
-            </Box>
-            <Box padding={"9px 0"}>
-              <Typography
-                fontSize={".9rem"}
-                fontWeight={"500"}
-                color={"grey_500.main"}>
-                Pricing Plans
-              </Typography>
-            </Box>
-            <Box padding={"9px 0"}>
-              <Typography
-                fontSize={".9rem"}
-                fontWeight={"500"}
-                color={"grey_500.main"}>
-                Privacy Policy
-              </Typography>
-            </Box>
-            <Box padding={"9px 0"}>
-              <Typography
-                fontSize={".9rem"}
-                fontWeight={"500"}
-                color={"grey_500.main"}>
-                Terms of Service
-              </Typography>
-            </Box>
+            <NavLink to='/'>
+              <Box padding={"9px 0"}>
+                <Typography
+                  fontSize={".9rem"}
+                  color={"grey_500.main"}
+                  fontWeight={"500"}>
+                  Phát âm
+                </Typography>
+              </Box>
+            </NavLink>
+            <NavLink to='/history'>
+              <Box padding={"9px 0"}>
+                <Typography
+                  fontSize={".9rem"}
+                  fontWeight={"500"}
+                  color={"grey_500.main"}>
+                  Lịch sử
+                </Typography>
+              </Box>
+            </NavLink>
+            <NavLink to='/pricing-plans'>
+              <Box padding={"9px 0"}>
+                <Typography
+                  fontSize={".9rem"}
+                  fontWeight={"500"}
+                  color={"grey_500.main"}>
+                  Giá cả dịch vụ
+                </Typography>
+              </Box>
+            </NavLink>
+            <NavLink to='/privacy'>
+              <Box padding={"9px 0"}>
+                <Typography
+                  fontSize={".9rem"}
+                  fontWeight={"500"}
+                  color={"grey_500.main"}>
+                  Chính sách bảo mật
+                </Typography>
+              </Box>
+            </NavLink>
+            <NavLink to='/terms'>
+              <Box padding={"9px 0"}>
+                <Typography
+                  fontSize={".9rem"}
+                  fontWeight={"500"}
+                  color={"grey_500.main"}>
+                  Điều khoản dịch vụ
+                </Typography>
+              </Box>
+            </NavLink>
           </Stack>
         </Box>
         <Box display={"flex"} gap={"20px"} alignItems={"center"}>
           <RiNotification2Line size={20} />
-          <Button
-            variant='contained'
-            sx={{ background: theme.palette.active.main }}
-            endIcon={<ArrowForwardIcon />}>
-            Sign in
-          </Button>
+          <Link to={"/signin"}>
+            <Button
+              variant='contained'
+              sx={{ background: theme.palette.active.main }}
+              endIcon={<ArrowForwardIcon />}>
+              Đăng nhập
+            </Button>
+          </Link>
         </Box>
         <Box onClick={toggleDrawer(true)}>
           <img src={user} style={{ borderRadius: "50%" }} width={50} alt='' />
@@ -169,6 +180,7 @@ const Header = () => {
                 <Typography fontWeight={"500"}>Miễn phí</Typography>
               </Box>
             </Box>
+
             <Box
               mt={"10px"}
               display={"flex"}
@@ -216,94 +228,100 @@ const Header = () => {
                 <Typography fontWeight={"500"}>0</Typography>
               </Box>
             </Box>
-            <Box
-              mt={"40px"}
-              border={"1px solid #dddddd"}
-              borderRadius={"10px"}
-              p={"10px 15px"}
-              sx={{
-                cursor: "pointer",
-                transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
-                "&:hover": {
-                  backgroundColor: "grey_700.main", // Background on hover
-                  color: "active.main", // Text and icon color on hover
-                },
-                "&:hover .MuiSvgIcon-root": {
-                  color: "active.main", // Icon color on hover
-                },
-              }}
-              width={"calc(100%-30px)"}>
-              <Box display={"flex"} alignItems={"center"} gap={"10px"}>
-                <AddShoppingCartIcon />
-                <Typography> Mua tín dụng</Typography>
+            <Link onClick={toggleDrawer(false)} to={"/buy-credits"}>
+              <Box
+                mt={"40px"}
+                border={"1px solid #dddddd"}
+                borderRadius={"10px"}
+                p={"10px 15px"}
+                sx={{
+                  cursor: "pointer",
+                  transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
+                  "&:hover": {
+                    backgroundColor: "grey_700.main", // Background on hover
+                    color: "active.main", // Text and icon color on hover
+                  },
+                  "&:hover .MuiSvgIcon-root": {
+                    color: "active.main", // Icon color on hover
+                  },
+                }}
+                width={"calc(100%-30px)"}>
+                <Box display={"flex"} alignItems={"center"} gap={"10px"}>
+                  <AddShoppingCartIcon />
+                  <Typography> Mua tín dụng</Typography>
+                </Box>
               </Box>
-            </Box>
-            <Box
-              mt={"20px"}
-              border={"1px solid #dddddd"}
-              borderRadius={"10px"}
-              p={"10px 15px"}
-              sx={{
-                cursor: "pointer",
-                transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
-                "&:hover": {
-                  backgroundColor: "grey_700.main", // Background on hover
-                  color: "active.main", // Text and icon color on hover
-                },
-                "&:hover .MuiSvgIcon-root": {
-                  color: "active.main", // Icon color on hover
-                },
-              }}
-              width={"calc(100%-30px)"}>
-              <Box display={"flex"} alignItems={"center"} gap={"10px"}>
-                <DescriptionIcon />
-                <Typography> Lịch sử thanh toán</Typography>
+            </Link>
+            <Link onClick={toggleDrawer(false)} to={"/payment-history"}>
+              <Box
+                mt={"20px"}
+                border={"1px solid #dddddd"}
+                borderRadius={"10px"}
+                p={"10px 15px"}
+                sx={{
+                  cursor: "pointer",
+                  transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
+                  "&:hover": {
+                    backgroundColor: "grey_700.main", // Background on hover
+                    color: "active.main", // Text and icon color on hover
+                  },
+                  "&:hover .MuiSvgIcon-root": {
+                    color: "active.main", // Icon color on hover
+                  },
+                }}
+                width={"calc(100%-30px)"}>
+                <Box display={"flex"} alignItems={"center"} gap={"10px"}>
+                  <DescriptionIcon />
+                  <Typography> Lịch sử thanh toán</Typography>
+                </Box>
               </Box>
-            </Box>
-            <Box
-              mt={"20px"}
-              border={"1px solid #dddddd"}
-              borderRadius={"10px"}
-              p={"10px 15px"}
-              sx={{
-                cursor: "pointer",
-                transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
-                "&:hover": {
-                  backgroundColor: "grey_700.main", // Background on hover
-                  color: "active.main", // Text and icon color on hover
-                },
-                "&:hover .MuiSvgIcon-root": {
-                  color: "active.main", // Icon color on hover
-                },
-              }}
-              width={"calc(100%-30px)"}>
-              <Box display={"flex"} alignItems={"center"} gap={"10px"}>
-                <ContactMailIcon />
-                <Typography> Thông tin tài khoản</Typography>
+            </Link>
+            <Link onClick={toggleDrawer(false)} to={"/profile"}>
+              <Box
+                mt={"20px"}
+                border={"1px solid #dddddd"}
+                borderRadius={"10px"}
+                p={"10px 15px"}
+                sx={{
+                  cursor: "pointer",
+                  transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
+                  "&:hover": {
+                    backgroundColor: "grey_700.main", // Background on hover
+                    color: "active.main", // Text and icon color on hover
+                  },
+                  "&:hover .MuiSvgIcon-root": {
+                    color: "active.main", // Icon color on hover
+                  },
+                }}
+                width={"calc(100%-30px)"}>
+                <Box display={"flex"} alignItems={"center"} gap={"10px"}>
+                  <ContactMailIcon />
+                  <Typography> Thông tin tài khoản</Typography>
+                </Box>
               </Box>
-            </Box>
-            <Box
-              mt={"20px"}
-              border={"1px solid #dddddd"}
-              borderRadius={"10px"}
-              p={"10px 15px"}
-              sx={{
-                cursor: "pointer",
-                transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
-                "&:hover": {
-                  backgroundColor: "grey_700.main", // Background on hover
-                  color: "active.main", // Text and icon color on hover
-                },
-                "&:hover .MuiSvgIcon-root": {
-                  color: "active.main", // Icon color on hover
-                },
-              }}
-              width={"calc(100%-30px)"}>
-              <Box display={"flex"} alignItems={"center"} gap={"10px"}>
-                <LogoutIcon />
-                <Typography>Đăng xuất </Typography>
+              <Box
+                mt={"20px"}
+                border={"1px solid #dddddd"}
+                borderRadius={"10px"}
+                p={"10px 15px"}
+                sx={{
+                  cursor: "pointer",
+                  transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
+                  "&:hover": {
+                    backgroundColor: "grey_700.main", // Background on hover
+                    color: "active.main", // Text and icon color on hover
+                  },
+                  "&:hover .MuiSvgIcon-root": {
+                    color: "active.main", // Icon color on hover
+                  },
+                }}
+                width={"calc(100%-30px)"}>
+                <Box display={"flex"} alignItems={"center"} gap={"10px"}>
+                  <LogoutIcon />
+                  <Typography>Đăng xuất </Typography>
+                </Box>
               </Box>
-            </Box>
+            </Link>
           </Box>
         </Drawer>
       </Box>

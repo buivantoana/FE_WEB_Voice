@@ -25,6 +25,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { RiPaypalFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 type Props = {};
 
 const ProfileView = (props: Props) => {
@@ -114,72 +115,100 @@ const ProfileView = (props: Props) => {
               <Typography fontWeight={"500"}>0</Typography>
             </Box>
           </Box>
-          <Box
-            mt={"40px"}
-            border={"1px solid #dddddd"}
-            borderRadius={"10px"}
-            p={"10px 15px"}
-            sx={{
-              cursor: "pointer",
-              transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
-              "&:hover": {
-                backgroundColor: "grey_700.main", // Background on hover
-                color: "active.main", // Text and icon color on hover
-              },
-              "&:hover .MuiSvgIcon-root": {
-                color: "active.main", // Icon color on hover
-              },
-            }}
-            width={"calc(100%-30px)"}>
-            <Box display={"flex"} alignItems={"center"} gap={"10px"}>
-              <AddShoppingCartIcon />
-              <Typography> Mua tín dụng</Typography>
+          <Link to={"/buy-credits"}>
+            <Box
+              mt={"40px"}
+              border={"1px solid #dddddd"}
+              borderRadius={"10px"}
+              p={"10px 15px"}
+              sx={{
+                cursor: "pointer",
+                transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
+                "&:hover": {
+                  backgroundColor: "grey_700.main", // Background on hover
+                  color: "active.main", // Text and icon color on hover
+                },
+                "&:hover .MuiSvgIcon-root": {
+                  color: "active.main", // Icon color on hover
+                },
+              }}
+              width={"calc(100%-30px)"}>
+              <Box display={"flex"} alignItems={"center"} gap={"10px"}>
+                <AddShoppingCartIcon />
+                <Typography> Mua tín dụng</Typography>
+              </Box>
             </Box>
-          </Box>
-          <Box
-            mt={"20px"}
-            border={"1px solid #dddddd"}
-            borderRadius={"10px"}
-            p={"10px 15px"}
-            sx={{
-              cursor: "pointer",
-              transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
-              "&:hover": {
-                backgroundColor: "grey_700.main", // Background on hover
-                color: "active.main", // Text and icon color on hover
-              },
-              "&:hover .MuiSvgIcon-root": {
-                color: "active.main", // Icon color on hover
-              },
-            }}
-            width={"calc(100%-30px)"}>
-            <Box display={"flex"} alignItems={"center"} gap={"10px"}>
-              <DescriptionIcon />
-              <Typography> Lịch sử thanh toán</Typography>
+          </Link>
+          <Link to={"/payment-history"}>
+            <Box
+              mt={"20px"}
+              border={"1px solid #dddddd"}
+              borderRadius={"10px"}
+              p={"10px 15px"}
+              sx={{
+                cursor: "pointer",
+                transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
+                "&:hover": {
+                  backgroundColor: "grey_700.main", // Background on hover
+                  color: "active.main", // Text and icon color on hover
+                },
+                "&:hover .MuiSvgIcon-root": {
+                  color: "active.main", // Icon color on hover
+                },
+              }}
+              width={"calc(100%-30px)"}>
+              <Box display={"flex"} alignItems={"center"} gap={"10px"}>
+                <DescriptionIcon />
+                <Typography> Lịch sử thanh toán</Typography>
+              </Box>
             </Box>
-          </Box>
-          <Box
-            mt={"20px"}
-            border={"1px solid #dddddd"}
-            borderRadius={"10px"}
-            p={"10px 15px"}
-            sx={{
-              cursor: "pointer",
-              transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
-              "&:hover": {
-                backgroundColor: "grey_700.main", // Background on hover
-                color: "active.main", // Text and icon color on hover
-              },
-              "&:hover .MuiSvgIcon-root": {
-                color: "active.main", // Icon color on hover
-              },
-            }}
-            width={"calc(100%-30px)"}>
-            <Box display={"flex"} alignItems={"center"} gap={"10px"}>
-              <ContactMailIcon />
-              <Typography> Thông tin tài khoản</Typography>
+          </Link>
+          <Link to={"/profile"}>
+            <Box
+              mt={"20px"}
+              border={"1px solid #dddddd"}
+              borderRadius={"10px"}
+              p={"10px 15px"}
+              sx={{
+                cursor: "pointer",
+                transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
+                "&:hover": {
+                  backgroundColor: "grey_700.main", // Background on hover
+                  color: "active.main", // Text and icon color on hover
+                },
+                "&:hover .MuiSvgIcon-root": {
+                  color: "active.main", // Icon color on hover
+                },
+              }}
+              width={"calc(100%-30px)"}>
+              <Box display={"flex"} alignItems={"center"} gap={"10px"}>
+                <ContactMailIcon />
+                <Typography> Thông tin tài khoản</Typography>
+              </Box>
             </Box>
-          </Box>
+            <Box
+              mt={"20px"}
+              border={"1px solid #dddddd"}
+              borderRadius={"10px"}
+              p={"10px 15px"}
+              sx={{
+                cursor: "pointer",
+                transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
+                "&:hover": {
+                  backgroundColor: "grey_700.main", // Background on hover
+                  color: "active.main", // Text and icon color on hover
+                },
+                "&:hover .MuiSvgIcon-root": {
+                  color: "active.main", // Icon color on hover
+                },
+              }}
+              width={"calc(100%-30px)"}>
+              <Box display={"flex"} alignItems={"center"} gap={"10px"}>
+                <LogoutIcon />
+                <Typography>Đăng xuất </Typography>
+              </Box>
+            </Box>
+          </Link>
           <Box
             mt={"20px"}
             border={"1px solid #dddddd"}

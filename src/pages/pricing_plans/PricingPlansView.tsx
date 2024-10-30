@@ -1,11 +1,13 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { RiCheckFill } from "react-icons/ri";
+import user from "../../images/user.png";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 type Props = {};
 
 const PricingPlansView = (props: Props) => {
-  const theme: any = useTheme();
+  const theme = useTheme();
   return (
     <Box p={"30px 10%"}>
       <Box
@@ -481,11 +483,12 @@ const PricingPlansView = (props: Props) => {
             </svg>
           </Box>
           <Typography my={"5px"} fontSize={"1.2rem"} fontWeight={"500"}>
-            Hỗ trợ cho các định dạng tài liệu đa dạng
+            Sự riêng tư và an ninh
           </Typography>
           <Typography color='grey_500.main'>
-            Chúng tôi hỗ trợ nhiều định dạng tài liệu, bao gồm văn bản thông
-            thường, PDF, DOCX và ebooks.
+            Chúng tôi áp dụng biện pháp an ninh tiên tiến để bảo vệ dữ liệu của
+            bạn và không chia sẻ thông tin với bất kỳ bên thứ ba nào nếu không
+            có sự đồng ý của bạn.
           </Typography>
         </Box>
         <Box
@@ -495,7 +498,42 @@ const PricingPlansView = (props: Props) => {
           width={"30%"}>
           <Box>
             <svg
-              style={{ fontSize: "36px" }}
+              fontSize={"36px"}
+              data-v-fa4d36aa=''
+              data-v-5879fc1d=''
+              xmlns='http://www.w3.org/2000/svg'
+              xmlnsXlink='http://www.w3.org/1999/xlink'
+              aria-hidden='true'
+              role='img'
+              className='icon w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white'
+              width='1em'
+              height='1em'
+              viewBox='0 0 32 32'>
+              <g fill='currentColor'>
+                <path d='M1.5 32h14a.5.5 0 0 0 0-1h-14a.5.5 0 0 1-.5-.5v-29a.5.5 0 0 1 .5-.5h21a.5.5 0 0 1 .5.5v5a.5.5 0 0 0 1 0v-5c0-.827-.673-1.5-1.5-1.5h-21C.673 0 0 .673 0 1.5v29c0 .827.673 1.5 1.5 1.5' />
+                <path d='M18 10.5v20c0 .827.673 1.5 1.5 1.5h11c.827 0 1.5-.673 1.5-1.5v-20c0-.827-.673-1.5-1.5-1.5h-11c-.827 0-1.5.673-1.5 1.5m13 0v20a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-20a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5' />
+                <circle cx={12} cy={28} r={1} />
+                <circle cx={25} cy={28} r={1} />
+              </g>
+            </svg>
+          </Box>
+          <Typography my={"5px"} fontSize={"1.2rem"} fontWeight={"500"}>
+            Tương thích di động
+          </Typography>
+          <Typography color='grey_500.main'>
+            Trang web của chúng tôi được thiết kế để tương thích với cả máy tính
+            và thiết bị di động, cho phép bạn dễ dàng truy cập và sử dụng dịch
+            vụ của chúng tôi bất kỳ lúc nào, bất kỳ nơi đâu.
+          </Typography>
+        </Box>
+        <Box
+          borderRadius={"20px"}
+          border={"1px solid #dddddd"}
+          padding={"20px"}
+          width={"30%"}>
+          <Box>
+            <svg
+              fontSize={"36px"}
               data-v-fa4d36aa=''
               data-v-5879fc1d=''
               xmlns='http://www.w3.org/2000/svg'
@@ -506,55 +544,153 @@ const PricingPlansView = (props: Props) => {
               width='1em'
               height='1em'
               viewBox='0 0 24 24'>
-              <g fill='none' fillRule='evenodd'>
-                <path d='m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z' />
-                <path
-                  fill='currentColor'
-                  d='M12 12c1.873 0 3.57.62 4.815 1.487c1.183.825 2.185 2.051 2.185 3.37c0 .724-.309 1.324-.796 1.77c-.458.421-1.056.694-1.672.88C15.301 19.88 13.68 20 12 20s-3.301-.12-4.532-.493c-.616-.186-1.214-.459-1.673-.88C5.31 18.182 5 17.582 5 16.858c0-1.319 1.002-2.545 2.185-3.37C8.43 12.62 10.127 12 12 12m0 2c-1.44 0-2.743.48-3.67 1.127c-.989.69-1.33 1.392-1.33 1.73c0 .304.352.494.672.614l.205.07l.17.052c.94.284 2.32.407 3.953.407c1.508 0 2.799-.105 3.728-.344l.304-.087l.19-.06c.343-.117.778-.314.778-.652s-.341-1.04-1.33-1.73C14.744 14.481 13.44 14 12 14m7-1c1.044 0 1.992.345 2.693.833c.64.447 1.307 1.19 1.307 2.096c0 1.335-1.297 1.813-2.463 1.98l-.3.037l-.289.025l-.138.008c.122-.345.19-.72.19-1.122a3.8 3.8 0 0 0-.107-.888c.386-.03.703-.08.939-.151c.104-.032.01-.13-.1-.215l-.107-.078l-.076-.051a2.7 2.7 0 0 0-.995-.418c-.38-.76-.964-1.418-1.586-1.943A4.8 4.8 0 0 1 19 13M5 13q.537.002 1.032.113c-.622.525-1.206 1.183-1.586 1.943a2.7 2.7 0 0 0-.995.418l-.128.088c-.127.092-.276.22-.155.256c.236.071.553.122.94.151a3.7 3.7 0 0 0-.108.888c0 .402.068.777.19 1.122l-.28-.02l-.296-.03c-1.202-.147-2.614-.607-2.614-2c0-.905.666-1.649 1.307-2.096A4.76 4.76 0 0 1 5 13m13.5-6a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5m-13 0a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5M12 3a4 4 0 1 1 0 8a4 4 0 0 1 0-8m6.5 6a.5.5 0 1 0 0 1a.5.5 0 0 0 0-1m-13 0a.5.5 0 1 0 0 1a.5.5 0 0 0 0-1M12 5a2 2 0 1 0 0 4a2 2 0 0 0 0-4'
-                />
-              </g>
+              <path
+                fill='currentColor'
+                d='M12 1c-5 0-9 4-9 9v7a3 3 0 0 0 3 3h3v-8H5v-2a7 7 0 0 1 7-7a7 7 0 0 1 7 7v2h-4v8h4v1h-7v2h6a3 3 0 0 0 3-3V10c0-5-4.03-9-9-9'
+              />
             </svg>
           </Box>
           <Typography my={"5px"} fontSize={"1.2rem"} fontWeight={"500"}>
-            Sử dụng thương mại
+            Hỗ trợ khách hàng
           </Typography>
           <Typography color='grey_500.main'>
-            Dịch vụ của chúng tôi hỗ trợ cả mục đích cá nhân và thương mại, mang
-            đến sự linh hoạt cho người dùng.
+            Chúng tôi cung cấp hỗ trợ qua email. Đội ngũ hỗ trợ của chúng tôi
+            luôn sẵn lòng trả lời mọi câu hỏi và hỗ trợ bạn bất cứ khi nào cần.
           </Typography>
+        </Box>
+      </Box>
+      <Box
+        textAlign={"center"}
+        display={"flex"}
+        flexDirection={"column"}
+        mt={"150px"}
+        gap={"30px"}>
+        <Typography variant='h1'>Câu hỏi thường gặp</Typography>
+        <Typography color='grey_500.main' fontSize={"1.3rem"}>
+          Nếu bạn không tìm thấy câu trả lời mà bạn đang tìm ở đây, vui lòng
+          liên hệ với chúng tôi:{" "}
+          <span style={{ color: theme.palette.active.main, fontWeight: "500" }}>
+            contact@ttsopenai.com
+          </span>
+        </Typography>
+      </Box>
+      <Box mt={"50px"} px={"50px"}>
+        <AccordionTransition />
+      </Box>
+      <Box
+        textAlign={"center"}
+        display={"flex"}
+        flexDirection={"column"}
+        mt={"150px"}
+        gap={"30px"}>
+        <Typography fontSize={"1.2rem"} fontWeight={"500"} color='active.main'>
+          Các người dùng của chúng tôi nói gì
+        </Typography>
+        <Typography variant='h1'>Đánh giá</Typography>
+        <Typography color='grey_500.main' fontSize={"1.3rem"}>
+          Dịch vụ của chúng tôi đã nhận được phản hồi tích cực từ nhiều người
+          dùng. Dưới đây là một số lời chứng thực chúng tôi đã nhận được.
+        </Typography>
+      </Box>
+      <Box
+        display={"flex"}
+        mt={"50px"}
+        justifyContent={"space-between"}
+        gap={"20px"}>
+        <Box
+          borderRadius={"20px"}
+          border={"1px solid #dddddd"}
+          padding={"20px"}
+          width={"30%"}>
+          <Typography color='grey_500.main'>
+            Tôi đã sử dụng ttsopenai.com trong một thời gian và tôi rất hài lòng
+            với chất lượng của các giọng đọc và sự dễ sử dụng. Tôi mạnh mẽ
+            khuyên dùng dịch vụ này cho bất kỳ ai đang tìm kiếm một công cụ
+            chuyển văn bản thành giọng nói đáng tin cậy.
+          </Typography>
+          <Box display={"flex"} alignItems={"center"} gap={"15px"}>
+            <img
+              src={user}
+              style={{ width: "80px", borderRadius: "50%" }}
+              alt=''
+            />
+            <Box>
+              <Typography fontWeight={"500"}>Trinh The Dinh</Typography>
+              <Typography color='grey_500.main'>CTO of Pal Company</Typography>
+            </Box>
+          </Box>
         </Box>
         <Box
           borderRadius={"20px"}
           border={"1px solid #dddddd"}
           padding={"20px"}
           width={"30%"}>
-          <Box>
-            <svg
-              style={{ fontSize: "36px" }}
-              data-v-fa4d36aa=''
-              data-v-5879fc1d=''
-              xmlns='http://www.w3.org/2000/svg'
-              xmlnsXlink='http://www.w3.org/1999/xlink'
-              aria-hidden='true'
-              role='img'
-              className='icon w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white'
-              width='1em'
-              height='1em'
-              viewBox='0 0 20 20'>
-              <path
-                fill='currentColor'
-                d='M4.5 4A2.5 2.5 0 0 0 2 6.5v7A2.5 2.5 0 0 0 4.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-7A2.5 2.5 0 0 0 15.5 4zM3 6.5A1.5 1.5 0 0 1 4.5 5h11A1.5 1.5 0 0 1 17 6.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 13.5zM4.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h8a.5.5 0 0 0 0-1zm.5 3a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1z'
-              />
-            </svg>
-          </Box>
-          <Typography my={"5px"} fontSize={"1.2rem"} fontWeight={"500"}>
-            Giao diện thân thiện với người dùng
-          </Typography>
           <Typography color='grey_500.main'>
-            Trang web của chúng tôi được thiết kế để dễ sử dụng, giúp quá trình
-            chuyển đổi văn bản thành giọng nói trở nên đơn giản và thuận tiện
-            cho mọi người.
+            Tôi đã sử dụng ttsopenai.com trong một thời gian và tôi rất hài lòng
+            với chất lượng của các giọng đọc và sự dễ sử dụng. Tôi mạnh mẽ
+            khuyên dùng dịch vụ này cho bất kỳ ai đang tìm kiếm một công cụ
+            chuyển văn bản thành giọng nói đáng tin cậy.
           </Typography>
+          <Box display={"flex"} alignItems={"center"} gap={"15px"}>
+            <img
+              src={user}
+              style={{ width: "80px", borderRadius: "50%" }}
+              alt=''
+            />
+            <Box>
+              <Typography fontWeight={"500"}>Trinh The Dinh</Typography>
+              <Typography color='grey_500.main'>CTO of Pal Company</Typography>
+            </Box>
+          </Box>
+        </Box>
+        <Box
+          borderRadius={"20px"}
+          border={"1px solid #dddddd"}
+          padding={"20px"}
+          width={"30%"}>
+          <Typography color='grey_500.main'>
+            Tôi đã sử dụng ttsopenai.com trong một thời gian và tôi rất hài lòng
+            với chất lượng của các giọng đọc và sự dễ sử dụng. Tôi mạnh mẽ
+            khuyên dùng dịch vụ này cho bất kỳ ai đang tìm kiếm một công cụ
+            chuyển văn bản thành giọng nói đáng tin cậy.
+          </Typography>
+          <Box display={"flex"} alignItems={"center"} gap={"15px"}>
+            <img
+              src={user}
+              style={{ width: "80px", borderRadius: "50%" }}
+              alt=''
+            />
+            <Box>
+              <Typography fontWeight={"500"}>Trinh The Dinh</Typography>
+              <Typography color='grey_500.main'>CTO of Pal Company</Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+      <Box>
+        <Box
+          textAlign={"center"}
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          mt={"150px"}
+          gap={"30px"}>
+          <Typography variant='h1'> Sẵn sàng bắt đầu không?</Typography>
+          <Typography color='grey_500.main' fontSize={"1.3rem"}>
+            Tham gia ttsopenai.com ngày hôm nay và trải nghiệm sự tiện lợi và
+            chất lượng của dịch vụ chuyển văn bản thành giọng nói của chúng tôi.
+          </Typography>
+          <Button
+            variant='contained'
+            sx={{
+              background: theme.palette.active.main,
+              width: "max-content",
+              fontSize: "22px",
+              borderRadius: "40px",
+            }}
+            endIcon={<ArrowForwardIcon />}>
+            Bắt đầu
+          </Button>
         </Box>
       </Box>
     </Box>
@@ -562,3 +698,164 @@ const PricingPlansView = (props: Props) => {
 };
 
 export default PricingPlansView;
+import Accordion, { AccordionSlots } from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Fade from "@mui/material/Fade";
+
+const data = [
+  {
+    title: "Tại sao chọn ttsopenai.com hơn các công cụ TTS khác?",
+    description:
+      "ttsopenai.com sử dụng TTS API của OpenAI, cung cấp giọng nói tự nhiên và chất lượng cao với chi phí thấp hơn so với nhiều công cụ khác trên thị trường. Ngoài ra, chúng tôi hỗ trợ chuyển đổi định dạng tài liệu đa dạng, từ văn bản thô đến PDF, DOCX và sách điện tử.",
+  },
+  {
+    title: "Làm thế nào để sử dụng dịch vụ ttsopenai.com?",
+    description:
+      "Dịch vụ của chúng tôi được thiết kế để dễ sử dụng. Bạn chỉ cần tải tài liệu lên và chọn giọng đọc mong muốn; hệ thống sẽ tự động chuyển đổi tài liệu của bạn thành giọng nói hoặc audiobook.",
+  },
+  {
+    title: "Có cần kiến thức lập trình để sử dụng ttsopenai.com không?",
+    description:
+      "Không, bạn không cần kiến thức lập trình. Chúng tôi đã tích hợp API TTS của OpenAI vào trang web, giúp quá trình chuyển đổi văn bản thành giọng nói trở nên đơn giản và thuận tiện cho mọi người.",
+  },
+  {
+    title:
+      "Loại tài liệu nào có thể chuyển đổi thành lời nói trên ttsopenai.com?",
+    description:
+      "Chúng tôi hỗ trợ nhiều định dạng tài liệu bao gồm văn bản đơn giản (txt), PDF, DOCX, và các định dạng tệp ebook.",
+  },
+  {
+    title: "Chi phí sử dụng ttsopenai.com là bao nhiêu?",
+    description:
+      "Chúng tôi đưa ra giá dựa trên giá cả của OpenAI, đảm bảo chi phí thấp hơn nhiều công cụ chuyển đổi văn bản thành âm thanh khác trên thị trường.",
+  },
+  {
+    title: "Có thể tùy chỉnh giọng nói không?",
+    description:
+      "Có, chúng tôi cung cấp các tùy chọn giọng nói khác nhau, cho phép bạn tùy chỉnh giọng nói theo sở thích cụ thể của bạn.",
+  },
+  {
+    title: "Có giới hạn về số lượng tài liệu mà tôi có thể chuyển đổi không?",
+    description:
+      "Chúng tôi cung cấp các gói dịch vụ khác nhau để phù hợp với nhu cầu của mỗi người dùng. Vui lòng tham khảo trực tiếp trên trang web để biết thông tin chi tiết.",
+  },
+  {
+    title: "Có thể tôi sử dụng ttsopenai.com cho mục đích thương mại không?",
+    description:
+      "Có, dịch vụ của chúng tôi hỗ trợ cả mục đích cá nhân và thương mại. Tuy nhiên, vui lòng đảm bảo tuân thủ các điều khoản sử dụng của chúng tôi.",
+  },
+  {
+    title: "Chất lượng của giọng điện tử trên ttsopenai.com là như thế nào?",
+    description:
+      "Có, dịch vụ của chúng tôi hỗ trợ cả mục đích cá nhân và thương mại. Tuy nhiên, vui lòng đảm bảo tuân thủ các điều khoản sử dụng của chúng tôi.Chất lượng giọng nói của chúng tôi rất cao, với giọng đọc tự nhiên và dễ nghe, nhờ công nghệ TTS tiên tiến từ OpenAI.",
+  },
+  {
+    title:
+      "Bạn có thể liên hệ với bộ phận hỗ trợ kỹ thuật ở đâu nếu gặp vấn đề khi sử dụng dịch vụ?",
+    description:
+      "Chúng tôi cung cấp hỗ trợ qua email và trò chuyện trực tuyến trên trang web. Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng trả lời mọi câu hỏi và hỗ trợ bạn bất cứ khi nào cần.",
+  },
+  {
+    title: "Loại tệp đầu ra của bài phát biểu là gì?",
+    description:
+      "Định dạng tệp đầu ra chính là MP3, đảm bảo tương thích với hầu hết các thiết bị và phần mềm phát nhạc.",
+  },
+  {
+    title: "Có thể chuyển đổi các tài liệu có kích thước lớn không?",
+    description:
+      "Có, chúng tôi hỗ trợ chuyển đổi tài liệu có kích thước lớn. Tuy nhiên, thời gian xử lý có thể tăng tùy thuộc vào kích thước của tài liệu. Để đảm bảo trải nghiệm tốt nhất, chúng tôi khuyến nghị chia nhỏ tài liệu lớn thành các phần nhỏ nếu có thể.",
+  },
+  {
+    title: "Làm sao tôi biết giọng đọc nào phù hợp cho tài liệu của tôi?",
+    description:
+      "Chúng tôi cung cấp một lựa chọn đa dạng các giọng điệu, bao gồm cả giọng nam và giọng nữ với nhiều âm sắc và ngôn ngữ khác nhau. Bạn có thể nghe mẫu giọng trước khi quyết định xem giọng nào phù hợp nhất với nội dung của tài liệu của bạn.",
+  },
+  {
+    title: "Có hỗ trợ ngôn ngữ nào khác ngoài tiếng Anh không?",
+    description:
+      "Có, chúng tôi hỗ trợ nhiều ngôn ngữ thông qua công nghệ TTS của OpenAI, giúp bạn dễ dàng chuyển đổi tài liệu thành giọng nói tự nhiên trong nhiều ngôn ngữ khác nhau.",
+  },
+  {
+    title: "Tôi có thể chỉnh sửa hoặc tùy chỉnh âm thanh đầu ra không?",
+    description:
+      "Trong khi chúng tôi không cung cấp chức năng chỉnh sửa trực tiếp trên nền tảng, bạn có thể tùy chỉnh một số cài đặt như tốc độ đọc và âm điệu trước khi chuyển đổi. Điều này cho phép bạn kiểm soát tốt hơn cảm giác và âm thanh cuối cùng của tệp đầu ra.",
+  },
+  {
+    title:
+      "Làm thế nào để bảo vệ sự riêng tư và dữ liệu của tôi trên ttsopenai.com?",
+    description:
+      "An ninh và quyền riêng tư của người dùng là ưu tiên hàng đầu của chúng tôi. Chúng tôi sử dụng các biện pháp an ninh tiên tiến để bảo vệ dữ liệu của bạn và không chia sẻ thông tin với bất kỳ bên thứ ba nào mà không có sự đồng ý của bạn.",
+  },
+  {
+    title:
+      "Có thể tôi sử dụng ttsopenai.com để tạo nội dung cho trang web hoặc blog của mình không?",
+    description:
+      "Có, bạn có thể sử dụng dịch vụ của chúng tôi để tạo nội dung âm thanh cho trang web, blog, hoặc các nền tảng truyền thông xã hội của bạn, làm phong phú cách bạn truyền đạt thông tin đến đọc giả hoặc khách hàng của mình.",
+  },
+  {
+    title: "Có cần tạo tài khoản để sử dụng dịch vụ không?",
+    description:
+      "Có, việc tạo tài khoản giúp bạn quản lý tài liệu đã chuyển đổi một cách dễ dàng và truy cập vào các tính năng tiên tiến và dịch vụ hỗ trợ khách hàng tốt hơn.",
+  },
+  {
+    title: "Có thể tôi yêu cầu thêm giọng nói hoặc ngôn ngữ mới không?",
+    description:
+      "Chúng tôi luôn lắng nghe phản hồi từ người dùng và cố gắng mở rộng dịch vụ của chúng tôi. Nếu bạn có yêu cầu cụ thể về một giọng điệu hay ngôn ngữ cụ thể, vui lòng gửi chúng cho hệ thống hỗ trợ của chúng tôi.",
+  },
+  {
+    title:
+      "Có thể tôi sử dụng dịch vụ ttsopenai.com trên điện thoại di động của tôi không?",
+    description:
+      "Có, trang web của chúng tôi được thiết kế để tương thích với cả máy tính và thiết bị di động, cho phép bạn dễ dàng truy cập và sử dụng dịch vụ của chúng tôi bất kỳ lúc nào, bất kỳ đâu.",
+  },
+  // Add more items as needed
+];
+
+function AccordionTransition() {
+  const [expandedIndices, setExpandedIndices] = React.useState([]);
+
+  const handleExpansion = (index: any) => {
+    setExpandedIndices((prevIndices: any) =>
+      prevIndices.includes(index)
+        ? prevIndices.filter((i: any) => i !== index)
+        : [...prevIndices, index]
+    );
+  };
+
+  return (
+    <div>
+      {data.map((item, index) => (
+        <Accordion
+          key={index}
+          expanded={expandedIndices.includes(index)}
+          onChange={() => handleExpansion(index)}
+          slots={{ transition: Fade as AccordionSlots["transition"] }}
+          slotProps={{ transition: { timeout: 400 } }}
+          sx={{
+            "& .MuiAccordion-region": expandedIndices.includes(index)
+              ? { height: "auto" }
+              : { height: 0 },
+            "& .MuiAccordionDetails-root": expandedIndices.includes(index)
+              ? { display: "block" }
+              : { display: "none" },
+          }}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls={`panel${index}-content`}
+            id={`panel${index}-header`}>
+            <Typography fontWeight={"500"} fontSize={"1.2rem"}>
+              {item.title}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography fontSize={"1rem"} color='grey_500.main'>
+              {item.description}
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+      ))}
+    </div>
+  );
+}

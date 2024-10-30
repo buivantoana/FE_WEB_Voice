@@ -27,7 +27,7 @@ import { RiPaypalFill } from "react-icons/ri";
 type Props = {};
 
 const BuyCreditView = (props: Props) => {
-  const theme:any = useTheme();
+  const theme: any = useTheme();
   return (
     <Box padding={"2% 10%"}>
       <Box display={"flex"} justifyContent={"space-between"}>

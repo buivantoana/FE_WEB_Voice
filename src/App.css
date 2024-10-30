@@ -14,6 +14,16 @@
   padding: 0;
   /* box-sizing: border-box; */
 }
+a {
+  text-decoration: none;
+  color: unset;
+}
+.active {
+  border-bottom: 2px solid rgb(5 122 85);
+}
+.active div p {
+  color: rgb(5 122 85) !important;
+}
 body {
   margin: 0px;
 }

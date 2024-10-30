@@ -1,14 +1,9 @@
 import Router from "./routes/Routes";
-
 import "./App.css";
-
+import { createContext, useContext, useReducer } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { createContext, useContext, useEffect, useReducer } from "react";
-import { useLocalStorage } from "./hooks/useStorage";
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme";
 const queryClient = new QueryClient();
